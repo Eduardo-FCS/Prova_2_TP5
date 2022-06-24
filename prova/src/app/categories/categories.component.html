@@ -1,0 +1,25 @@
+<h3>Categorias:</h3>
+
+<table>
+    <thead>
+        <th>Index</th>
+        <th>Categoria</th>
+        <th>Qtd</th>
+        <th>Músicas</th>
+    </thead>
+    <tbody *ngFor="let c of categoryList">
+        <th>{{c.id}}</th>
+        <th>{{c.name}}</th>
+        <th></th>
+        <th><input type="button" routerLink= "/musics" value="Ver"></th>
+    </tbody>
+</table>
+
+<form #myForm="ngForm" (submit)="saveCategory(myForm)">
+    <p>Nova Categoria:</p>
+    <div>
+        <label for="categoryName">Nome:</label>
+        <input type="text" name="categoryName" [(ngModel)]="newCategory.name">
+    </div>
+    <input type="submit" value="Salvar">
+</form>
